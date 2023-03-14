@@ -1,0 +1,13 @@
+<footer id="footer" class="sovbb-footer">
+    <div class="uk-container-expand">
+        <div class="uk-container uk-container-xsmall uk-margin-top uk-margin-bottom">
+            <div class="uk-child-width-1-2@s uk-child-width-1-1" uk-grid>
+                {{ range $.Site.Data.footer }} 
+                <div>
+                    {{ .column | markdownify }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</footer>

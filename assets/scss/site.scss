@@ -1,0 +1,253 @@
+// from https://google-webfonts-helper.herokuapp.com/
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+    url('.{{ (resources.Get "fonts/Roboto-700.woff2").RelPermalink }}')
+      format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""),
+    url('.{{ (resources.Get "fonts/Roboto-700-italic.woff2").RelPermalink }}')
+      format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url('.{{ (resources.Get "fonts/Roboto-400.woff2").RelPermalink }}')
+      format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""),
+    url('.{{ (resources.Get "fonts/Roboto-400-italic.woff2").RelPermalink }}')
+      format("woff2");
+}
+
+// 1. Your custom variables and variable overwrites.
+
+$sovbb-red: rgb(227, 6, 19);
+$sovbb-black: #000;
+$sovbb-white: #fff;
+$global-2xlarge-font-size: 1.875rem; // H1
+$global-xlarge-font-size: 1.625rem; // H2
+$global-large-font-size: 1.312rem; // H3
+$global-medium-font-size: 1.125rem; // H4
+$base-heading-color: $sovbb-black;
+$base-body-color: $sovbb-black;
+$global-link-color: $sovbb-red;
+$global-font-family: Roboto, sans-serif;
+$global-accent-color: $sovbb-red;
+$offcanvas-bar-width: 320px;
+$inverse-global-color: $sovbb-white;
+$navbar-nav-item-text-transform: initial;
+$navbar-background: $sovbb-white;
+$navbar-nav-item-color: $sovbb-black;
+$navbar-nav-item-hover-color: $sovbb-red;
+$navbar-nav-item-active-color: $sovbb-red;
+$navbar-nav-item-padding-horizontal: 1rem;
+$navbar-nav-item-font-size: 1rem;
+$navbar-dropdown-nav-font-size: 1rem;
+$navbar-dropdown-shift-margin: -10px;
+$navbar-dropdown-viewport-margin: 0;
+$navbar-dropdown-nav-item-color: $sovbb-black;
+$navbar-dropdown-nav-item-active-color: $sovbb-red;
+$navbar-dropdown-nav-item-hover-color: $sovbb-red;
+//$offcanvas-bar-color-mode: light;
+//$offcanvas-bar-background: $sovbb-white;
+
+// 2. Import default variables and available mixins.
+@import "../uikit/src/scss/variables-theme.scss";
+@import "../uikit/src/scss/mixins-theme.scss";
+
+// 3. Your custom mixin overwrites.
+// @mixin hook-card() {
+//   color: #000;
+// }
+
+// 4. Import UIkit.
+@import "../uikit/src/scss/uikit.scss";
+
+.sovbb-navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .uk-logo {
+    @media (min-width: $breakpoint-medium) {
+      margin-left: -140px;
+    }
+    img {
+      height: 60px;
+    }
+  }
+}
+.sovbb-hero {
+  background-color: $sovbb-red;
+  > div {
+    padding-top: 30px;
+    position: relative;
+    height: 250px;
+    padding-bottom: 80px;
+    margin-bottom: 5ex;
+    img {
+      @media (min-width: $breakpoint-medium) {
+        margin-left: -60px;
+      }
+      height: 100%;
+    }
+    @media (min-width: $breakpoint-medium) {
+      height: 300px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.sovbb-intro {
+  margin-top: 2ex;
+  @media (min-width: $breakpoint-medium) {
+    font-size: 2rem;
+  }
+  font-size: 1.6rem;
+  font-weight: normal;
+  margin-bottom: 2ex;
+}
+
+.sovbb-reasons {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  em {
+    font-style: normal;
+    color: $sovbb-red;
+  }
+  .sovbb-reason {
+    break-inside: avoid;
+    text-indent: -1.2em;
+    padding-left: 1.2em;
+    margin-bottom: 1ex;
+  }
+  margin-top: 6ex;
+}
+
+.sovbb-invite {
+  padding-top: 3ex;
+  padding-bottom: 6ex;
+  margin-top: 4ex;
+  background-color: $sovbb-red;
+  color: $sovbb-white;
+  h2 {
+    font-weight: normal;
+    font-size: 2rem;
+    color: $sovbb-white;
+    margin-bottom: 0.5ex;
+  }
+  p {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin-bottom: 1ex;
+    margin-top: 1.5ex;
+    padding: 0;
+  }
+  dl {
+    margin-top: 1ex;
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-template-rows: max-content;
+    column-gap: 1em;
+    row-gap: 0.5ex;
+    dt {
+      grid-column: 1;
+      font-weight: normal;
+    }
+    dd {
+      grid-column: 2;
+    }
+  }
+  @media (min-width: $breakpoint-medium) {
+    padding-bottom: 3ex;
+  }
+}
+
+.sovbb-body {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.sovbb-footer {
+  font-size: 0.8rem;
+}
+
+.sovbb-nav {
+  .uk-logo {
+    margin-left: -7rem;
+    img {
+      height: 8rem;
+    }
+  }
+}
+
+.sovbb-button-member {
+  background-color: $sovbb-white;
+  color: $sovbb-black;
+  border-color: $sovbb-red;
+  border-width: 3px;
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  line-height: 100%;
+  border-radius: 50%;
+  font-weight: normal;
+  text-align: center;
+  transform: rotate(-15deg);
+  width: 10ex;
+  height: 10ex;
+  @media (min-width: $breakpoint-medium) {
+    right: -4ex;
+    font-size: 2rem;
+  }
+  font-size: 1.5rem;
+  right: 1ex;
+  bottom: -4ex;
+  position: absolute;
+  &:hover {
+    text-decoration: none;
+    color: $sovbb-red;
+  }
+}
+
+.sovbb-button-rsvp {
+  background-color: $sovbb-white;
+  color: $sovbb-black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  line-height: 100%;
+  font-weight: normal;
+  text-align: center;
+  transform: rotate(-15deg);
+  @media (min-width: $breakpoint-medium) {
+    right: -4ex;
+    bottom: 2ex;
+    font-size: 2rem;
+  }
+  font-size: 1.5rem;
+  right: 2ex;
+  bottom: -1.5ex;
+  padding: 0.5ex;
+  position: absolute;
+  &:hover {
+    text-decoration: none;
+    color: $sovbb-red;
+  }
+}
