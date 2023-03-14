@@ -3,7 +3,7 @@
     <div class="uk-container-expand sovbb-hero uk-position-relative">
         <div class="uk-container uk-container-xsmall uk-container-large@l">
             <img src='{{ (resources.Get "img/sovbb_hero.svg").RelPermalink }}' alt="{{ $.Site.Title }}" />
-            <a target="membership_form" href="{{ .Params.Link.rsvp.link}}" class="sovbb-button-member">
+            <a target="membership_form" href="{{ .Params.Links.membership.link}}" class="sovbb-button-member">
                 <div>
                     {{ .Params.Links.membership.text }}</div>
             </a>
@@ -42,7 +42,7 @@
             </dl>
             {{ end }}
             {{ end }}
-            <a target="rsvp_form" href="{{ .Params.Link.rsvp.link}}" class="sovbb-button-rsvp">
+            <a target="rsvp_form" href="{{ .Params.Links.rsvp.link}}" class="sovbb-button-rsvp">
                 <div>
                     {{ .Params.Links.rsvp.text }}</div>
             </a>
