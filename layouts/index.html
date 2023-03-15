@@ -37,7 +37,7 @@
             <dl>
                 {{ range .Details }}
                 <dt>{{ .Key }}</dt>
-                <dd>{{ .Value }}</dd>
+                <dd>{{ .Value | safeHTML }}</dd>
                 {{ end }}
             </dl>
             {{ end }}
