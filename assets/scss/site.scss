@@ -140,10 +140,13 @@ $navbar-dropdown-nav-item-hover-color: $sovbb-red;
 
 .sovbb-invite {
   padding-top: 3ex;
-  padding-bottom: 6ex;
+  padding-bottom: 8ex;
   margin-top: 4ex;
   background-color: $sovbb-red;
   color: $sovbb-white;
+  @media (min-width: $breakpoint-medium) {
+    padding-bottom: 3ex;
+  }
   h2 {
     font-weight: normal;
     font-size: 2rem;
@@ -172,9 +175,7 @@ $navbar-dropdown-nav-item-hover-color: $sovbb-red;
       grid-column: 2;
     }
   }
-  @media (min-width: $breakpoint-medium) {
-    padding-bottom: 3ex;
-  }
+  
 }
 
 .sovbb-body {
@@ -243,7 +244,7 @@ $navbar-dropdown-nav-item-hover-color: $sovbb-red;
   }
   font-size: 1.5rem;
   right: 2ex;
-  bottom: -1.5ex;
+  bottom: -2.5ex;
   padding: 0.5ex;
   position: absolute;
   &:hover {
