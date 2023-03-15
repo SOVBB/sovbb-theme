@@ -238,13 +238,13 @@ $navbar-dropdown-nav-item-hover-color: $sovbb-red;
   text-align: center;
   transform: rotate(-15deg);
   @media (min-width: $breakpoint-medium) {
-    right: -4ex;
-    bottom: 2ex;
+    right: 4ex;
+    bottom: 3ex;
     font-size: 2rem;
   }
   font-size: 1.5rem;
-  right: 2ex;
-  bottom: -2.5ex;
+  right: 3ex;
+  bottom: -1ex;
   padding: 0.5ex;
   position: absolute;
   &:hover {
