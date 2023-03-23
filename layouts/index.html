@@ -11,7 +11,7 @@
     </div>
     <div class="uk-container uk-container-xsmall">
         <div class="sovbb-intro">{{ .Params.Intro }}</div>
-        <div class="sovbb-body">
+        <div class="sovbb-body uk-margin-medium-bottom">
             {{.Content}}
         </div>
         {{ with .Params.Reasons }}
@@ -26,13 +26,17 @@
             </div>
         </div>
         {{ end }}
+        <div class="sovbb-body uk-margin-medium-top">
+            {{.Params.Closing}}
+        </div>
     </div>
+
     <div class="uk-container-expand sovbb-invite">
         
         <div class="uk-container uk-container-xsmall uk-position-relative">
             {{ with .Params.Invite }}
             <h2>{{ .Title }}</h2>
-            <p>{{ .Text }}</p>
+            <p>{{ .Text | safeHTML }}</p>
             {{ if .Details }}
             <dl>
                 {{ range .Details }}
