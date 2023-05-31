@@ -30,7 +30,7 @@
             {{.Params.Closing}}
         </div>
     </div>
-
+    {{ if .Params.Invite }}
     <div class="uk-container-expand sovbb-invite">
         
         <div class="uk-container uk-container-xsmall uk-position-relative">
@@ -52,5 +52,6 @@
             </a>
         </div>
     </div>
+    {{ end }}
 </main>
 {{ end }}
