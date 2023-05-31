@@ -187,6 +187,11 @@ $navbar-dropdown-nav-item-hover-color: $sovbb-red;
   font-size: 0.8rem;
   background-color: $sovbb-red;
   color: $sovbb-white;
+  padding-top: 4ex;
+  padding-bottom: 4ex;
+  a {
+    color: $sovbb-white;
+  }
 }
 
 .sovbb-nav {
