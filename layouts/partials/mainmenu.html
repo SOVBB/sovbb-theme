@@ -1,0 +1,31 @@
+{{ $currentPage := . }}
+
+{{ range $.Site.Sections.ByWeight }}
+    {{ $active := newScratch }}
+    {{ if eq ( $currentPage.CurrentSection ) ( .CurrentSection ) }}
+        {{ $active.Set "class" "uk-active" }}
+    {{ end }}
+        <li class='uk-parent {{ $active.Get "class" }} uk-visible@m'>
+            {{ if .Params.href }}
+            <a class='uk-text-nowrap' target="_new" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
+            {{ else }}
+            <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
+            {{ end }}
+            {{ if .Pages }}
+            <div class="uk-navbar-dropdown"
+                uk-dropdown="animation: slide-top; animate-out: true; offset: -10px;">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
+                    {{ range .Pages.ByWeight }}
+                        {{ $active := newScratch }}
+                        {{ if eq ( $currentPage.RelPermalink ) ( .RelPermalink ) }}
+                        {{ $active.Set "class" "uk-active" }}
+                    {{ end }}
+                    <li class='{{ $active.Get "class" }}'>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        </li>
+{{ end }}

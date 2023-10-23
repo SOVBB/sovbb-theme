@@ -16,6 +16,12 @@
                             </a>
                         </li>
                     {{ end}}
+                    {{/* MAIN MENU  ################################ */}}
+                    {{ partial "mainmenu.html" . }}
+                    {{/* MOBILE MENU BUTTON########################### */}}
+                    <li class="uk-hidden@m">
+                        <a href="#sovbb-offcanvas-nav" uk-toggle>Menu <span uk-icon="icon: menu; ratio: 1.5"></span></a>
+                    </li>
                 </ul>
             </div>
         </nav>

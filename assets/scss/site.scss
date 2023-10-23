@@ -174,7 +174,6 @@ $navbar-dropdown-nav-item-hover-color: $sovbb-red;
       grid-column: 2;
     }
   }
-  
 }
 
 .sovbb-body {
@@ -258,5 +257,36 @@ $navbar-dropdown-nav-item-hover-color: $sovbb-red;
   &:hover {
     text-decoration: none;
     color: $sovbb-red;
+  }
+}
+
+// color settings are necessary because the offcanvas menu
+// seems to be invered and I can not find the reseaon for this.
+.sovbb-mobile-menu {
+  .uk-offcanvas-bar {
+    background-color: $sovbb-white;
+    a {
+      color: $wl-black;
+    }
+    .uk-nav-default {
+      .uk-nav-divider {
+        border-top-color: $sovbb-black;
+      }
+
+      > li {
+        margin-top: 2ex;
+        > a {
+          color: $sovbb-red;
+        }
+      }
+      .uk-nav-sub {
+        > li > a {
+          color: $sovbb-black;
+        }
+      }
+    }
+    li.uk-active > a {
+      color: $sovbb-red;
+    }
   }
 }
