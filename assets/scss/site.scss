@@ -288,10 +288,16 @@ $breadcrumb-divider-color: $sovbb-black;
     img {
       position: absolute;
       height: 100%;
-      left: 0px;
     }
     .sovbb-hero-redbar {
-        left: -90px;
+        left: -300px;
+        @media (min-width: $breakpoint-medium) {
+            left: auto;
+            right: 850px;
+        }
+        @media (min-width: $breakpoint-large) {
+            right: 990px;
+        }
     }
     .sovbb-hero-image {
         object-fit: cover;
