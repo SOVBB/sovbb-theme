@@ -49,8 +49,10 @@ $global-font-family: Roboto, sans-serif;
 $global-accent-color: $sovbb-red;
 $offcanvas-bar-width: 320px;
 $inverse-global-color: $sovbb-white;
-$navbar-nav-item-text-transform: initial;
+
 $navbar-background: $sovbb-white;
+$navbar-nav-item-text-transform: uppercase;
+$navbar-nav-item-font-style: bold;
 $navbar-nav-item-color: $sovbb-black;
 $navbar-nav-item-hover-color: $sovbb-red;
 $navbar-nav-item-active-color: $sovbb-red;
@@ -62,6 +64,14 @@ $navbar-dropdown-viewport-margin: 0;
 $navbar-dropdown-nav-item-color: $sovbb-black;
 $navbar-dropdown-nav-item-active-color: $sovbb-red;
 $navbar-dropdown-nav-item-hover-color: $sovbb-red;
+
+$breadcrumb-item-font-size: 0.8rem;
+$breadcrumb-item-color: $sovbb-black;
+$breadcrumb-item-hover-color: $sovbb-red;
+$breadcrumb-item-active-color: $sovbb-red;
+$breadcrumb-divider: "\\";
+$breadcrumb-divider-margin-horizontal: 0.5em;
+$breadcrumb-divider-color: $sovbb-black;
 //$offcanvas-bar-color-mode: light;
 //$offcanvas-bar-background: $sovbb-white;
 
@@ -86,28 +96,6 @@ $navbar-dropdown-nav-item-hover-color: $sovbb-red;
     }
     img {
       height: 60px;
-    }
-  }
-}
-.sovbb-hero {
-  background-color: $sovbb-red;
-  > div {
-    padding-top: 30px;
-    position: relative;
-    height: 250px;
-    padding-bottom: 80px;
-    margin-bottom: 5ex;
-    img {
-      @media (min-width: $breakpoint-medium) {
-        margin-left: -60px;
-      }
-      height: 100%;
-    }
-    @media (min-width: $breakpoint-medium) {
-      height: 300px;
-      padding-top: 60px;
-      padding-bottom: 60px;
-      margin-bottom: 0px;
     }
   }
 }
@@ -290,3 +278,19 @@ $navbar-dropdown-nav-item-hover-color: $sovbb-red;
     }
   }
 }
+
+.sovbb-hero {
+    height: 190px;
+    position: relative;
+    > img {
+        position: absolute;
+        height: 100%;
+        left:0px;
+    }
+    > .sovbb-hero-image {
+        object-fit: cover;
+        left: 0px;
+        width: 100%;
+    }
+}
+

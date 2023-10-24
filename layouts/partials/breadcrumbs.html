@@ -1,0 +1,10 @@
+{{- if not .IsHome }}
+<div class="uk-container uk-container-xsmall">
+    <ul class="uk-breadcrumb">
+        {{- range $index, $page := .Ancestors.Reverse }}
+        <li><a href="{{ $page.RelPermalink }}">{{ if eq $index 0 }}Home{{ else }}{{ $page.Title }}{{ end }}</a></li>
+        {{- end }}
+        <li><a>{{ .Title }}</a></li>
+    </ul>
+</div>
+{{ end -}}
