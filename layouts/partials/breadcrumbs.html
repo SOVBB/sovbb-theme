@@ -2,7 +2,11 @@
 <div class="uk-container uk-container-xsmall">
     <ul class="uk-breadcrumb">
         {{- range $index, $page := .Ancestors.Reverse }}
+        {{ if and $page.Pages (not $page.IsHome) }}
+        <li><a>{{ if eq $index 0 }}Home{{ else }}{{ $page.Title }}{{ end }}</a></li>
+        {{ else }}
         <li><a href="{{ $page.RelPermalink }}">{{ if eq $index 0 }}Home{{ else }}{{ $page.Title }}{{ end }}</a></li>
+        {{- end }}
         {{- end }}
         <li><a>{{ .Title }}</a></li>
     </ul>

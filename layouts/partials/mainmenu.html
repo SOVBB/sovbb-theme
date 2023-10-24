@@ -9,9 +9,8 @@
             {{ if .Params.href }}
             <a class='uk-text-nowrap' target="_new" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
             {{ else }}
-            <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
-            {{ end }}
             {{ if .Pages }}
+            <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
             <div class="uk-navbar-dropdown"
                 uk-dropdown="animation: slide-top; animate-out: true; offset: -10px;">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -26,6 +25,9 @@
                     {{ end }}
                 </ul>
             </div>
+            {{ else }}
+            <a class='uk-text-nowrap' href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
+            {{ end }}
             {{ end }}
         </li>
 {{ end }}

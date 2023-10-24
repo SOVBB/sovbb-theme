@@ -1,4 +1,11 @@
-<div class="sovbb-hero uk-container uk-container-expand">
-    <img class="sovbb-hero-image" src="{{ (resources.Get "img/hero-agenda.jpg").Permalink }}" alt="" >
-    <img class="sovbb-hero-redbar" src="{{ (resources.Get "img/hero-redbar.svg").Permalink }}" alt="" >
+{{ if .IsHome }}
+{{ else }}
+<div class="sovbb-hero">
+    <div class="uk-container">
+        {{ if .Section }}
+        <img class="sovbb-hero-image" src='{{ (resources.Get (print "img/hero-" .Section ".jpg")).Permalink }}' alt="">
+        {{ end }}
+        <img class="sovbb-hero-redbar" src='{{ (resources.Get "img/hero-redbar.svg").Permalink }}' alt="">
+    </div>
 </div>
+{{ end }}
