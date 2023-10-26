@@ -1,0 +1,46 @@
+{{/* MOBILE MENU  ################################ */}}
+{{ $currentPage := . }}
+<div class="sovbb-mobile-menu" id="sovbb-offcanvas-nav" uk-offcanvas="overlay: true; flip: true;">
+    <div class="uk-offcanvas-bar">
+        <div class="uk-text-right">
+            <a href="#sovbb-offcanvas-nav" uk-toggle><span uk-icon="icon: close; ratio: 1.5"></span></a>
+        </div>
+        <ul class="uk-nav-default" uk-nav="active: 0;">
+            {{ range $.Site.Sections.ByWeight }}
+            {{ $active := newScratch }}
+            {{ if eq ( $currentPage.CurrentSection ) ( .CurrentSection ) }}
+                {{ $active.Set "class" "uk-active" }}
+            {{ end }}
+                
+                    {{ if .Params.href }}
+                    <li class='{{ $active.Get "class" }}'>
+                    <a class='uk-text-nowrap' target="_new" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
+                    </li>
+                    {{ else }}
+                    {{ if .Pages }}
+                    <li class='uk-parent {{ $active.Get "class" }}'>
+                    <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
+                    <ul class="uk-nav-sub">
+                    {{ range .Pages.ByWeight }}
+                        {{ $active := newScratch }}
+                        {{ if eq ( $currentPage.RelPermalink ) ( .RelPermalink ) }}
+                        {{ $active.Set "class" "uk-active" }}
+                        {{ end }}
+                        <li class='{{ $active.Get "class" }}'>
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            
+                        </li>
+                    {{ end }}
+                    </ul>
+                    </li>
+                    {{ else }}
+                    <li class='{{ $active.Get "class" }}'>
+                    <a class='uk-text-nowrap' href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </li>
+        {{ end }}
+        </ul>
+    </div>
+</div>

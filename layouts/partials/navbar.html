@@ -16,7 +16,8 @@
                 {{ partial "mainmenu.html" . }}
                 {{/* MOBILE MENU BUTTON########################### */}}
                 <li class="uk-hidden@m">
-                    <a href="#sovbb-offcanvas-nav" uk-toggle>Menu <span uk-icon="icon: menu; ratio: 1.5"></span></a>
+                    <a href="#sovbb-offcanvas-nav" uk-toggle><img style='width: 2rem' src='{{ (resources.Get "img/sovbb_mobilemenu.svg").RelPermalink }}'/></a>
+                    </a>
                 </li>
             </ul>
         </div>

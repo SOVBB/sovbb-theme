@@ -257,14 +257,20 @@ $breadcrumb-divider-color: $sovbb-black;
       color: $sovbb-black;
     }
     .uk-nav-default {
-      .uk-nav-divider {
-        border-top-color: $sovbb-black;
-      }
-
       > li {
         margin-top: 2ex;
         > a {
-          color: $sovbb-red;
+          color: $sovbb-black;
+        }
+        &.uk-parent::before {
+            content: "+";
+            font-size: 1.5em;
+            position: absolute;
+            right: 2em;
+            color: $sovbb-black;
+        }
+        &.uk-parent.uk-active::before {
+            content: '-';
         }
       }
       .uk-nav-sub {
@@ -273,6 +279,7 @@ $breadcrumb-divider-color: $sovbb-black;
         }
       }
     }
+    li
     li.uk-active > a {
       color: $sovbb-red;
     }
