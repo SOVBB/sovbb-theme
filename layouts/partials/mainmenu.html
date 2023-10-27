@@ -12,7 +12,7 @@
             {{ if .Pages }}
             <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
             <div class="uk-navbar-dropdown"
-                uk-dropdown="animation: slide-top; animate-out: true; offset: -10px;">
+                uk-dropdown="animation: slide-top; animate-out: true; offset: 8ex;">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
                     {{ range .Pages.ByWeight }}
                         {{ $active := newScratch }}

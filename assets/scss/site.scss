@@ -58,6 +58,7 @@ $navbar-nav-item-hover-color: $sovbb-red;
 $navbar-nav-item-active-color: $sovbb-red;
 $navbar-nav-item-padding-horizontal: 1rem;
 $navbar-nav-item-font-size: 1rem;
+$navbar-nav-item-height: 0px; 
 $navbar-dropdown-nav-font-size: 1rem;
 $navbar-dropdown-shift-margin: -10px;
 $navbar-dropdown-viewport-margin: 0;
@@ -181,12 +182,9 @@ $breadcrumb-divider-color: $sovbb-black;
   }
 }
 
-.sovbb-nav {
-  .uk-logo {
-    margin-left: -7rem;
-    img {
-      height: 8rem;
-    }
+.sovbb-navbar .uk-navbar-nav {
+  .uk-parent {
+    padding-top: 3.4ex;
   }
 }
 
@@ -260,9 +258,11 @@ $breadcrumb-divider-color: $sovbb-black;
     a {
       color: $sovbb-black;
     }
+    a:hover,
     .uk-active > a {
       color: $sovbb-red;
     }
+
 
     .uk-nav {
       margin-top: 3ex;
@@ -288,7 +288,36 @@ $breadcrumb-divider-color: $sovbb-black;
   }
 }
 
-.sovbb-hero {
+.sovbb-mobilemenu-button {
+    padding-top: 2ex;
+}
+
+.sovbb-hero-home {
+    background-color: $sovbb-red;
+    margin-bottom: 5ex;
+    > div {
+      padding-top: 30px;
+      position: relative;
+      height: 250px;
+      padding-bottom: 80px;
+      margin-bottom: 5ex;
+      img {
+        @media (min-width: $breakpoint-medium) {
+          margin-left: -60px;
+        }
+        height: 100%;
+      }
+      @media (min-width: $breakpoint-medium) {
+        height: 300px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  
+.sovbb-hero-section {
   height: 190px;
   background-color: $sovbb-red;
   div {
