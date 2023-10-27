@@ -1,11 +1,31 @@
 {{/* MOBILE MENU  ################################ */}}
 {{ $currentPage := . }}
+<style>
+    .sovbb-mobile-menu .uk-nav .uk-parent::before {
+
+        background-image: 
+            url('{{ (resources.Get "img/sovbb_arrow_down.svg").RelPermalink }}');
+        content: " ";
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        top: 0.6ex;
+        right: 0.3em;
+    }
+    .sovbb-mobile-menu .uk-nav .uk-parent.uk-open::before {
+        background-image: 
+            url('{{ (resources.Get "img/sovbb_arrow_up.svg").RelPermalink }}');
+    }
+</style>
 <div class="sovbb-mobile-menu" id="sovbb-offcanvas-nav" uk-offcanvas="overlay: true; flip: true;">
     <div class="uk-offcanvas-bar">
         <div class="uk-text-right">
             <a href="#sovbb-offcanvas-nav" uk-toggle><span uk-icon="icon: close; ratio: 1.5"></span></a>
         </div>
-        <ul class="uk-nav-default" uk-nav="active: 0;">
+        <ul class="" uk-nav="active: 0;">
             {{ range $.Site.Sections.ByWeight }}
             {{ $active := newScratch }}
             {{ if eq ( $currentPage.CurrentSection ) ( .CurrentSection ) }}
