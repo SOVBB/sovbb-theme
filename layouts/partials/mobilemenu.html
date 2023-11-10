@@ -2,9 +2,8 @@
 {{ $currentPage := . }}
 <style>
     .sovbb-mobile-menu .uk-nav .uk-parent::before {
-
         background-image: 
-            url('/sovbb-website{{ (resources.Get "img/sovbb_arrow_down.svg").RelPermalink }}');
+            url('{{ (resources.Get "img/sovbb_arrow_down.svg").RelPermalink }}');
         content: " ";
         background-position: center;
         background-size: contain;
@@ -17,7 +16,7 @@
     }
     .sovbb-mobile-menu .uk-nav .uk-parent.uk-open::before {
         background-image: 
-            url('/sovbb-website{{ (resources.Get "img/sovbb_arrow_up.svg").RelPermalink }}');
+            url('{{ (resources.Get "img/sovbb_arrow_up.svg").RelPermalink }}');
     }
 </style>
 <div class="sovbb-mobile-menu" id="sovbb-offcanvas-nav" uk-offcanvas="overlay: true; flip: true;">

@@ -1,13 +1,24 @@
 <footer id="footer" class="sovbb-footer">
     <div class="uk-container-expand">
         <div class="uk-container uk-container-xsmall uk-margin-top uk-margin-bottom">
-            <div class="uk-child-width-1-2@s uk-child-width-1-1" uk-grid>
-                {{ range $.Site.Data.footer }} 
-                <div class="sovbb-body">
-                    {{ .column | markdownify }}
+            <div class="uk-flex sovbb-footer-flex">
+                {{ with $.Site.Data.footer }}
+                <div class="uk-flex-auto uk-margin-large-right uk-margin-large-bottom">
+                    <div class="uk-margin-bottom">
+                        <b>KONTAKT</b><br>
+                        {{ .Adresse | markdownify }}
+                    </div>
+                    <div>
+                        {{ .Datenschutz | markdownify }}
+                    </div>
+                    <div>
+                        {{ .Impressum | markdownify }}
+                    </div>
+                </div>
+                <div>
+                    {{ .Notes | markdownify }}
                 </div>
                 {{ end }}
             </div>
         </div>
-    </div>
 </footer>

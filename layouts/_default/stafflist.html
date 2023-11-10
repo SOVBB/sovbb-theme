@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main role="main">
+    <div class="uk-container uk-container-xsmall">
+        <h1>{{.Title}}</h1>
+        <div class="sovbb-content">
+            {{ .Content }}
+        </div>
+        {{ $resources := .Resources.Match "*.md" }}
+        {{ range $resources }}
+        <!-- Access individual YAML file properties -->
+        <h2>{{ .Params.Name }}</h2>
+        <p><img src="{{ print .File.BaseFileName ".jpg"}}"></p>
+        {{ end }}
+    </div>
+</main>
+{{ end }}

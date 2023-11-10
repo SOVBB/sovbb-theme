@@ -2,7 +2,15 @@
 <main role="main">
     <div class="uk-container uk-container-xsmall">
         <h1>{{.Title}}</h1>
+        <div class="sovbb-content">
         <div>{{ .Content }}</div>
+        </div>
+        {{ range .Pages }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} | {{ .Title }}</a>
+        </li>
+      {{ end }}
+
     </div>
 </main>
 {{ end }}

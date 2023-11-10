@@ -38,9 +38,9 @@
 $sovbb-red: rgb(227, 6, 19);
 $sovbb-black: #000;
 $sovbb-white: #fff;
-$global-2xlarge-font-size: 1.875rem; // H1
-$global-xlarge-font-size: 1.625rem; // H2
-$global-large-font-size: 1.312rem; // H3
+$global-2xlarge-font-size: 2rem; // H1
+$global-xlarge-font-size: 1.5625rem; // H2
+$global-large-font-size: 1.3125rem; // H3
 $global-medium-font-size: 1.125rem; // H4
 $base-heading-color: $sovbb-black;
 $base-body-color: $sovbb-black;
@@ -343,4 +343,19 @@ $breadcrumb-divider-color: $sovbb-black;
       height: 100%;
     }
   }
+}
+
+.sovbb-footer {
+    .sovbb-footer-flex {
+        @media screen and (max-width: $breakpoint-small) {
+            flex-direction: column;
+        }
+    }
+}
+
+
+.sovbb-content {
+    > :first-child {
+        font-size: 1.2rem;
+    }
 }
