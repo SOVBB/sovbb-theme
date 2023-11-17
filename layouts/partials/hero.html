@@ -10,13 +10,21 @@
 </div>
 {{ else }}
 <div class="sovbb-hero-section">
-    <div class="uk-container">
-        
-        {{ $res := resources.Get (print "img/hero-" (or .Params.Hero .Section) ".jpg") }}
-        {{ if $res }}
+    <div class="uk-container uk-container-xsmall">
+
+    {{ $res := resources.Get (print "img/hero-" (or .Params.Hero .Section) ".jpg") }}
+    {{ if $res }}
+    <div class="sovbb-hero-image-positioner">
         <img class="sovbb-hero-image" src='{{ $res.Permalink }}' alt="">
-        {{ end }}
-        <img class="sovbb-hero-redbar" src='{{ (resources.Get "img/hero-redbar.svg").Permalink }}' alt="">
+ 
+    <div class="sovbb-hero-overlay">
+        <svg viewBox="0 0 47 152" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon points="0,0 0,152 47,152" />
+        </svg>
+    </div>
+    <div class="sovbb-hero-fader"></div>
+    </div>
+    {{ end }}
     </div>
 </div>
 {{ end }}

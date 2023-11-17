@@ -1,7 +1,9 @@
 <footer id="footer" class="sovbb-footer">
+    
     <div class="uk-container-expand">
         <div class="uk-container uk-container-xsmall uk-margin-top uk-margin-bottom">
             <div class="uk-flex sovbb-footer-flex">
+                
                 {{ with $.Site.Data.footer }}
                 <div class="uk-flex-auto uk-margin-large-right uk-margin-large-bottom">
                     <div class="uk-margin-bottom">
@@ -17,6 +19,14 @@
                 </div>
                 <div>
                     {{ .Notes | markdownify }}
+                </div>
+                {{ end }}
+                {{ if not .IsHome  }}
+                <div class="sovbb-button-member-positioner">
+                <a target="membership_form" href="{{ $.Site.Home.Params.Links.membership.link}}" class="sovbb-button-member">
+                    <div>
+                        {{ $.Site.Home.Params.Links.membership.text }}</div>
+                </a>
                 </div>
                 {{ end }}
             </div>
