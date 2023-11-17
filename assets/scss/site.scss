@@ -58,7 +58,7 @@ $navbar-nav-item-hover-color: $sovbb-red;
 $navbar-nav-item-active-color: $sovbb-red;
 $navbar-nav-item-padding-horizontal: 1rem;
 $navbar-nav-item-font-size: 1rem;
-$navbar-nav-item-height: 0px; 
+$navbar-nav-item-height: 0px;
 $navbar-dropdown-nav-font-size: 1rem;
 $navbar-dropdown-shift-margin: -10px;
 $navbar-dropdown-viewport-margin: 0;
@@ -249,9 +249,9 @@ $breadcrumb-divider-color: $sovbb-black;
 // color settings are necessary because the offcanvas menu
 // seems to be invered and I can not find the reseaon for this.
 .sovbb-mobile-menu {
-    .sovbb-x {
-        width: 2rem;
-    }
+  .sovbb-x {
+    width: 2rem;
+  }
   .uk-offcanvas-bar {
     background-color: $sovbb-white;
     font-size: 1.4rem;
@@ -262,7 +262,6 @@ $breadcrumb-divider-color: $sovbb-black;
     .uk-active > a {
       color: $sovbb-red;
     }
-
 
     .uk-nav {
       margin-top: 3ex;
@@ -277,46 +276,45 @@ $breadcrumb-divider-color: $sovbb-black;
           color: $sovbb-red;
         }
         .uk-nav-sub {
-            font-size: 1.3rem;
-             & > li > a {
-          display: block;
-          margin-bottom: 1.4ex;
+          font-size: 1.3rem;
+          & > li > a {
+            display: block;
+            margin-bottom: 1.4ex;
+          }
         }
-    }
       }
     }
   }
 }
 
 .sovbb-mobilemenu-button {
-    padding-top: 2ex;
+  padding-top: 2ex;
 }
 
 .sovbb-hero-home {
-    background-color: $sovbb-red;
+  background-color: $sovbb-red;
+  margin-bottom: 5ex;
+  > div {
+    padding-top: 30px;
+    position: relative;
+    height: 250px;
+    padding-bottom: 80px;
     margin-bottom: 5ex;
-    > div {
-      padding-top: 30px;
-      position: relative;
-      height: 250px;
-      padding-bottom: 80px;
-      margin-bottom: 5ex;
-      img {
-        @media (min-width: $breakpoint-medium) {
-          margin-left: -60px;
-        }
-        height: 100%;
-      }
+    img {
       @media (min-width: $breakpoint-medium) {
-        height: 300px;
-        padding-top: 60px;
-        padding-bottom: 60px;
-        margin-bottom: 0px;
+        margin-left: -60px;
       }
+      height: 100%;
+    }
+    @media (min-width: $breakpoint-medium) {
+      height: 300px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      margin-bottom: 0px;
     }
   }
+}
 
-  
 .sovbb-hero-section {
   height: 190px;
   background-color: $sovbb-red;
@@ -346,16 +344,99 @@ $breadcrumb-divider-color: $sovbb-black;
 }
 
 .sovbb-footer {
-    .sovbb-footer-flex {
-        @media screen and (max-width: $breakpoint-small) {
-            flex-direction: column;
-        }
+  .sovbb-footer-flex {
+    @media screen and (max-width: $breakpoint-small) {
+      flex-direction: column;
     }
+  }
 }
 
-
 .sovbb-content {
-    > :first-child {
-        font-size: 1.2rem;
+  > :first-child {
+    font-size: 1.2rem;
+  }
+  margin-bottom: 4ex;
+}
+
+.sovbb-person {
+  .sovbb-name {
+    margin-top: 2ex;
+    font-size: $global-large-font-size;
+  }
+  .sovbb-function {
+    margin-top: 0.5ex;
+  }
+}
+
+.sovbb-links,
+.sovbb-downloads {
+  padding-left: 0;
+  > li {
+    position: relative;
+    list-style-type: none;
+    border-top: 1px solid $sovbb-black;
+    font-size: 0.8rem;
+    padding-left: 2em;
+    padding-top: 0.5ex;
+    padding-bottom: 0.5ex;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
+    &:hover {
+      color: $sovbb-red;
+    }
+    &:last-child {
+      border-bottom: 1px solid $sovbb-black;
+    }
+    &::before {
+      content: " ";
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 1.3em;
+      height: 1.3em;
+      position: absolute;
+      top: 1ex;
+      left: 0;
+    }
+  }
+}
+
+.sovbb-agenda {
+  font-size: 0.8rem;
+  @media screen and (min-width: $breakpoint-small) {
+    display: grid;
+    grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+    column-gap: 4em;
+  }
+  .sovbb-line {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    border-top: 1px solid $sovbb-black;
+    margin-top: 0ex;
+    margin-bottom: 2ex;
+  }
+  .sovbb-date {
+    margin-right: 2ex;
+    width: min-content;
+  }
+  .sovbb-desc {
+    @media screen and (min-width: $breakpoint-small) {
+      /* take any excess space in the row */
+    }
+    h2 {
+      font-size: inherit;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+  .sovbb-link {
+    a {
+      color: $sovbb-black;
+      text-decoration: underline;
+    }
+  }
 }

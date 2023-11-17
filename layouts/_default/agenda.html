@@ -1,0 +1,29 @@
+{{ define "main" }}
+<main role="main">
+    <div class="uk-container uk-container-xsmall">
+        <h1>{{.Title}}</h1>
+        <div class="sovbb-content">
+            {{ .Content }}
+        </div>
+        {{ $resources := .Resources.Match "*.md" }}
+        {{ if $resources }}
+        <div class="sovbb-agenda">
+            {{ range $resources }}
+            <div class="sovbb-line"></div>
+            <div class="sovbb-date">
+                {{ time.Format "02.01.2006" .Date }}
+            </div>
+            <div class="sovbb-desc">
+                <h2>{{ .Title }}</h2>
+                <div>{{ .Content }}</div>
+            </div>
+            <div class="sovbb-link">
+                <a href="{{ .Params.Href }}">{{ .Params.LinkText }}</a>
+            </div>
+            {{ end }}
+            <div class="sovbb-line"></div>
+        </div>
+        {{ end }}
+    </div>
+</main>
+{{ end }}

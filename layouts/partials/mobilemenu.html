@@ -26,7 +26,7 @@
                 (resources.Get "img/sovbb_x.svg").RelPermalink }}'></a>
         </div>
         <ul class="" uk-nav="active: 0;">
-            {{ range $.Site.Sections.ByWeight }}
+            {{ range .Site.Home.CurrentSection.Pages.ByWeight }}
             {{ $active := newScratch }}
             {{ if eq ( $currentPage.CurrentSection ) ( .CurrentSection ) }}
                 {{ $active.Set "class" "uk-active" }}
@@ -37,7 +37,7 @@
                     <a class='uk-text-nowrap' target="_new" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
                     </li>
                     {{ else }}
-                    {{ if .Pages }}
+                    {{ if ( and .Pages (not .Resources )) }}
                     <li class='uk-parent {{ $active.Get "class" }}'>
                     <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
                     <ul class="uk-nav-sub">

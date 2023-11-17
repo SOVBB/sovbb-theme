@@ -3,8 +3,42 @@
     <div class="uk-container uk-container-xsmall">
         <h1>{{.Title}}</h1>
         <div class="sovbb-content">
-        {{ .Content }}
+            {{ .Content }}
         </div>
+        {{ if (or .Params.Downloads .Params.Links) }}
+        <div class="uk-child-width-1-1 uk-child-width-1-2@s" uk-grid>
+            {{ if .Params.Downloads }}
+            <style>
+                .sovbb-downloads > li::before {
+                    background-image: url('{{ (resources.Get "img/sovbb_download.svg").RelPermalink }}');
+                }
+            </style>
+            <div>
+                <h2>Downloads</h2>
+                <ul class="sovbb-downloads">
+                    {{ range .Params.Downloads }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+            {{ if .Params.Links }}
+            <style>
+                .sovbb-links > li::before {
+                    background-image: url('{{ (resources.Get "img/sovbb_arrow_right.svg").RelPermalink }}');
+                }
+            </style>
+            <div>
+                <h2>Links</h2>
+                <ul class="sovbb-links">
+                    {{ range .Params.Links }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
     </div>
 </main>
 {{ end }}

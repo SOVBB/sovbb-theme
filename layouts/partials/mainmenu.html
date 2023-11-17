@@ -1,6 +1,5 @@
 {{ $currentPage := . }}
-
-{{ range $.Site.Sections.ByWeight }}
+{{ range .Site.Home.CurrentSection.Pages.ByWeight }}
     {{ $active := newScratch }}
     {{ if eq ( $currentPage.CurrentSection ) ( .CurrentSection ) }}
         {{ $active.Set "class" "uk-active" }}
@@ -9,7 +8,7 @@
             {{ if .Params.href }}
             <a class='uk-text-nowrap' target="_new" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
             {{ else }}
-            {{ if .Pages }}
+            {{ if ( and .Pages (not .Resources )) }}
             <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
             <div class="uk-navbar-dropdown"
                 uk-dropdown="animation: slide-top; animate-out: true; offset: 8ex;">

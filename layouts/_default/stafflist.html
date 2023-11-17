@@ -6,11 +6,29 @@
             {{ .Content }}
         </div>
         {{ $resources := .Resources.Match "*.md" }}
-        {{ range $resources }}
-        <!-- Access individual YAML file properties -->
-        <h2>{{ .Params.Name }}</h2>
-        <p><img src="{{ print .File.BaseFileName ".jpg"}}"></p>
-        {{ end }}
+        <div class="uk-child-width-1-1 uk-child-width-1-2@s" uk-grid>
+            {{ range $resources }}
+            <!-- Access individual YAML file properties -->
+            <div>
+                <div>
+                    <svg viewBox="0 0 200 152" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs>
+                            <clipPath id="clip">
+                                <polygon points="47,152 0,0 200,0 200,152" />
+                            </clipPath>
+                        </defs>
+                        <image xlink:href='{{ print .File.BaseFileName ".jpg"}}' width="200" height="200"
+                            clip-path="url(#clip)" preserveAspectRatio="xMidYMid slice" />
+                    </svg>
+                </div>
+                <div class="sovbb-person uk-text-right">
+                    <div class="sovbb-name">{{ .Params.Name }}</div>
+                    <div class="sovbb-function">{{ .Params.Function }}</div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
     </div>
 </main>
 {{ end }}

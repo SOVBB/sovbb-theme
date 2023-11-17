@@ -11,9 +11,10 @@
 {{ else }}
 <div class="sovbb-hero-section">
     <div class="uk-container">
-        {{ $res := resources.Get (print "img/hero-" .Section ".jpg") }}
+        
+        {{ $res := resources.Get (print "img/hero-" (or .Params.Hero .Section) ".jpg") }}
         {{ if $res }}
-        <img class="sovbb-hero-image" src='{{ (resources.Get (print "img/hero-" .Section ".jpg")).Permalink }}' alt="">
+        <img class="sovbb-hero-image" src='{{ $res.Permalink }}' alt="">
         {{ end }}
         <img class="sovbb-hero-redbar" src='{{ (resources.Get "img/hero-redbar.svg").Permalink }}' alt="">
     </div>
