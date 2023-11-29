@@ -310,7 +310,7 @@ $breadcrumb-item-decoration: none;
     a {
       color: $sovbb-black;
     }
-    a:hover,
+    a[href]:not([href="#"]):hover,
     .uk-active > a {
       color: $sovbb-red;
     }
@@ -324,6 +324,10 @@ $breadcrumb-item-decoration: none;
           display: block;
           margin: 0.4ex;
         }
+        // a with href is more than 1 charecter long
+        
+
+        a[href]:not([href="#"]):hover,
         &.uk-active > a {
           color: $sovbb-red;
         }
@@ -439,7 +443,7 @@ $breadcrumb-item-decoration: none;
   > li {
     position: relative;
     list-style-type: none;
-    border-top: 1px solid $sovbb-black;
+    border-top: 1px solid $sovbb-grey;
     padding-left: 2em;
     padding-top: 0.5ex;
     padding-bottom: 0.5ex;
@@ -451,7 +455,7 @@ $breadcrumb-item-decoration: none;
       color: $sovbb-red;
     }
     &:last-child {
-      border-bottom: 1px solid $sovbb-black;
+      border-bottom: 1px solid $sovbb-grey;
     }
     &::before {
       content: " ";
@@ -479,7 +483,7 @@ $breadcrumb-item-decoration: none;
   .sovbb-line {
     grid-column-start: 1;
     grid-column-end: 4;
-    border-top: 1px solid $sovbb-black;
+    border-top: 1px solid $sovbb-grey;
     margin-top: 0ex;
     margin-bottom: 2ex;
   }
@@ -508,6 +512,11 @@ $breadcrumb-item-decoration: none;
     a {
       color: $sovbb-grey;
       text-decoration: underline;
+    }
+    &:hover {
+      a {
+        color: $sovbb-red;
+      }
     }
   }
 }
