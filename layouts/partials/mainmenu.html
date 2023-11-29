@@ -1,5 +1,8 @@
 {{ $currentPage := . }}
 {{ range .Site.Home.CurrentSection.Pages.ByWeight }}
+    {{ if .Params.HideInMenu }}
+        {{ continue }}
+    {{ end }}
     {{ $active := newScratch }}
     {{ if eq ( $currentPage.RelPermalink ) ( .RelPermalink ) }}
         {{ $active.Set "class" "uk-active" }}

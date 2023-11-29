@@ -6,7 +6,7 @@
             {{ .Content }}
         </div>
         {{ $resources := .Resources.Match "*.md" }}
-        <div class="uk-child-width-1-1 uk-child-width-1-2@s" uk-grid>
+        <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-margin-bottom" uk-grid>
             {{ range $resources }}
             <!-- Access individual YAML file properties -->
             <div>

@@ -1,9 +1,8 @@
-{{/* MOBILE MENU  ################################ */}}
+{{/* MOBILE MENU ################################ */}}
 {{ $currentPage := . }}
 <style>
     .sovbb-mobile-menu .uk-nav .uk-parent::before {
-        background-image: 
-            url('{{ (resources.Get "img/sovbb_arrow_down.svg").RelPermalink }}');
+        background-image: url('{{ (resources.Get "img/sovbb_arrow_down.svg").RelPermalink }}');
         content: " ";
         background-position: center;
         background-size: contain;
@@ -14,53 +13,55 @@
         top: 0.6ex;
         right: 0.3em;
     }
+
     .sovbb-mobile-menu .uk-nav .uk-parent.uk-open::before {
-        background-image: 
-            url('{{ (resources.Get "img/sovbb_arrow_up.svg").RelPermalink }}');
+        background-image: url('{{ (resources.Get "img/sovbb_arrow_up.svg").RelPermalink }}');
     }
 </style>
 <div class="sovbb-mobile-menu" id="sovbb-offcanvas-nav" uk-offcanvas="overlay: true; flip: true;">
     <div class="uk-offcanvas-bar">
         <div class="uk-text-right">
-            <a href="#sovbb-offcanvas-nav" uk-toggle><img class="sovbb-x"  src='{{
+            <a href="#sovbb-offcanvas-nav" uk-toggle><img class="sovbb-x" src='{{
                 (resources.Get "img/sovbb_x.svg").RelPermalink }}'></a>
         </div>
         <ul class="" uk-nav="active: 0;">
             {{ range .Site.Home.CurrentSection.Pages.ByWeight }}
+            {{ if .Params.HideInMenu }}
+            {{ continue }}
+            {{ end }}
             {{ $active := newScratch }}
             {{ if eq ( $currentPage.RelPermalink ) ( .RelPermalink ) }}
-                {{ $active.Set "class" "uk-active" }}
+            {{ $active.Set "class" "uk-active" }}
             {{ end }}
-                
-                    {{ if .Params.href }}
-                    <li class='{{ $active.Get "class" }}'>
-                    <a class='uk-text-nowrap' target="_new" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
-                    </li>
-                    {{ else }}
-                    {{ if ( and .Pages (not .Resources )) }}
-                    <li class='uk-parent {{ $active.Get "class" }}'>
-                    <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
-                    <ul class="uk-nav-sub">
+
+            {{ if .Params.href }}
+            <li class='{{ $active.Get "class" }}'>
+                <a class='uk-text-nowrap' target="_new" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
+            </li>
+            {{ else }}
+            {{ if ( and .Pages (not .Resources )) }}
+            <li class='uk-parent {{ $active.Get "class" }}'>
+                <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
+                <ul class="uk-nav-sub">
                     {{ range .Pages.ByWeight }}
-                        {{ $active := newScratch }}
-                        {{ if eq ( $currentPage.RelPermalink ) ( .RelPermalink ) }}
-                        {{ $active.Set "class" "uk-active" }}
-                        {{ end }}
-                        <li class='{{ $active.Get "class" }}'>
-                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                            
-                        </li>
+                    {{ $active := newScratch }}
+                    {{ if eq ( $currentPage.RelPermalink ) ( .RelPermalink ) }}
+                    {{ $active.Set "class" "uk-active" }}
                     {{ end }}
-                    </ul>
-                    </li>
-                    {{ else }}
                     <li class='{{ $active.Get "class" }}'>
-                    <a class='uk-text-nowrap' href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+
                     </li>
                     {{ end }}
-                    {{ end }}
-                </li>
-        {{ end }}
+                </ul>
+            </li>
+            {{ else }}
+            <li class='{{ $active.Get "class" }}'>
+                <a class='uk-text-nowrap' href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
+            </li>
+            {{ end }}
+            {{ end }}
+            {{ end }}
         </ul>
     </div>
 </div>

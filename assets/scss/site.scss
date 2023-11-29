@@ -63,12 +63,13 @@ $navbar-dropdown-nav-item-active-color: $sovbb-red;
 $navbar-dropdown-nav-item-hover-color: $sovbb-red;
 
 $breadcrumb-item-font-size: 1rem;
-$breadcrumb-item-color: $sovbb-black;
+$breadcrumb-item-color: $sovbb-grey;
 $breadcrumb-item-hover-color: $sovbb-red;
 $breadcrumb-item-active-color: $sovbb-red;
 $breadcrumb-divider: "\\";
 $breadcrumb-divider-margin-horizontal: 0.5em;
-$breadcrumb-divider-color: $sovbb-black;
+$breadcrumb-divider-color: $sovbb-grey;
+$breadcrumb-item-decoration: none;
 //$offcanvas-bar-color-mode: light;
 //$offcanvas-bar-background: $sovbb-white;
 
@@ -90,6 +91,9 @@ $breadcrumb-divider-color: $sovbb-black;
     font-weight: $navbar-nav-item-font-weight;
 }
 
+.uk-breadcrumb > li > a {
+    text-decoration: none;
+}
 .sovbb-navbar {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -179,6 +183,9 @@ $breadcrumb-divider-color: $sovbb-black;
 .sovbb-footer {
   margin-top: 8ex;
   font-size: 0.8rem;
+  @media screen and (min-width: $breakpoint-small) {
+    font-size: 1rem;    
+  }
   background-color: $sovbb-red;
   color: $sovbb-white;
   padding-top: 4ex;
@@ -409,6 +416,9 @@ $breadcrumb-divider-color: $sovbb-black;
 .sovbb-content {
   > :first-child {
     font-size: 1.2rem;
+    @media screen and (min-width: $breakpoint-medium) {
+      font-size: 1.5625rem;
+    }
   }
   margin-bottom: 4ex;
 }
