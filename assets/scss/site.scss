@@ -189,6 +189,10 @@ $breadcrumb-divider-color: $sovbb-black;
         div {
           color: $sovbb-black;
         }
+        &:hover div {
+            color: $sovbb-red;
+          }
+        
 
         top: -5ex;
         right: 2ex;
@@ -237,9 +241,6 @@ $breadcrumb-divider-color: $sovbb-black;
   transform: rotate(-15deg);
   width: 10ex;
   height: 10ex;
-  > div {
-    color: $sovbb-black;
-  }
   @media (min-width: $breakpoint-medium) {
     right: -4ex;
     font-size: 2rem;
@@ -423,9 +424,6 @@ $breadcrumb-divider-color: $sovbb-black;
     position: relative;
     list-style-type: none;
     border-top: 1px solid $sovbb-black;
-    @media screen and (min-width: $breakpoint-small) {
-      font-size: 0.8rem;
-    }
     padding-left: 2em;
     padding-top: 0.5ex;
     padding-bottom: 0.5ex;
@@ -461,7 +459,6 @@ $breadcrumb-divider-color: $sovbb-black;
       auto
       minmax(max-content, 1fr);
     column-gap: 4em;
-    font-size: 0.8rem;
   }
   .sovbb-line {
     grid-column-start: 1;

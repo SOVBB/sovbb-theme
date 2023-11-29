@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main role="main">
     <div class="uk-container-expand sovbb-hero uk-position-relative">
-        <div class="uk-container uk-container-xsmall uk-container-large@l">
+        <div class="uk-container uk-container-small uk-container-large@l">
             <img src='{{ (resources.Get "img/sovbb_hero.svg").RelPermalink }}' alt="{{ $.Site.Title }}" />
             <a target="membership_form" href="{{ .Params.Links.membership.link}}" class="sovbb-button-member">
                 <div>
@@ -9,7 +9,7 @@
             </a>
         </div>
     </div>
-    <div class="uk-container uk-container-xsmall">
+    <div class="uk-container uk-container-small">
         <div class="sovbb-intro">{{ .Params.Intro }}</div>
         <div class="sovbb-body uk-margin-medium-bottom">
             {{.Content}}
@@ -33,7 +33,7 @@
     {{ if .Params.Invite }}
     <div class="uk-container-expand sovbb-invite">
         
-        <div class="uk-container uk-container-xsmall uk-position-relative">
+        <div class="uk-container uk-container-small uk-position-relative">
             {{ with .Params.Invite }}
             <h2>{{ .Title }}</h2>
             <p>{{ .Text | safeHTML }}</p>

@@ -1,7 +1,7 @@
 {{ $currentPage := . }}
 {{ range .Site.Home.CurrentSection.Pages.ByWeight }}
     {{ $active := newScratch }}
-    {{ if eq ( $currentPage.CurrentSection ) ( .CurrentSection ) }}
+    {{ if eq ( $currentPage.RelPermalink ) ( .RelPermalink ) }}
         {{ $active.Set "class" "uk-active" }}
     {{ end }}
         <li class='uk-parent {{ $active.Get "class" }} uk-visible@m'>
@@ -13,15 +13,15 @@
             <div class="uk-navbar-dropdown"
                 uk-dropdown="animation: slide-top; animate-out: true; offset: 8ex;">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                    {{ range .Pages.ByWeight }}
-                        {{ $active := newScratch }}
-                        {{ if eq ( $currentPage.RelPermalink ) ( .RelPermalink ) }}
+                {{ range .Pages.ByWeight }}
+                    {{ $active := newScratch }}
+                    {{ if eq ( $currentPage.RelPermalink ) ( .RelPermalink ) }}
                         {{ $active.Set "class" "uk-active" }}
                     {{ end }}
                     <li class='{{ $active.Get "class" }}'>
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </li>
-                    {{ end }}
+                {{ end }}
                 </ul>
             </div>
             {{ else }}

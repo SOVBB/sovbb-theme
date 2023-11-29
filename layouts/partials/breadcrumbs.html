@@ -1,5 +1,5 @@
 {{- if not .IsHome }}
-<div class="uk-container uk-container-xsmall uk-margin-bottom">
+<div class="uk-container uk-container-small uk-margin-top uk-margin-bottom">
     <ul class="uk-breadcrumb">
         {{- range $index, $page := .Ancestors.Reverse }}
         {{ if and $page.Pages (not $page.IsHome) }}

@@ -28,7 +28,7 @@
         <ul class="" uk-nav="active: 0;">
             {{ range .Site.Home.CurrentSection.Pages.ByWeight }}
             {{ $active := newScratch }}
-            {{ if eq ( $currentPage.CurrentSection ) ( .CurrentSection ) }}
+            {{ if eq ( $currentPage.RelPermalink ) ( .RelPermalink ) }}
                 {{ $active.Set "class" "uk-active" }}
             {{ end }}
                 
