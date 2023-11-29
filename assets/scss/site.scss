@@ -29,14 +29,18 @@
 
 $sovbb-red: rgb(227, 6, 19);
 $sovbb-black: #000;
+$sovbb-grey: #313131;
 $sovbb-white: #fff;
 $global-2xlarge-font-size: 2rem; // H1
 $global-xlarge-font-size: 1.5625rem; // H2
 $global-large-font-size: 1.3125rem; // H3
+$global-large-fong-weight: 700;
 $global-medium-font-size: 1.125rem; // H4
-$base-heading-color: $sovbb-black;
-$base-body-color: $sovbb-black;
-$global-link-color: $sovbb-red;
+$base-heading-color: $sovbb-grey;
+$base-body-color: $sovbb-grey;
+$global-link-color: $sovbb-grey;
+$global-link-hover-color: $sovbb-red;
+$base-link-text-decoration: underline;
 $global-font-family: Roboto, sans-serif;
 $global-accent-color: $sovbb-red;
 $offcanvas-bar-width: 320px;
@@ -44,8 +48,8 @@ $inverse-global-color: $sovbb-white;
 
 $navbar-background: $sovbb-white;
 $navbar-nav-item-text-transform: uppercase;
-$navbar-nav-item-font-style: bold;
-$navbar-nav-item-color: $sovbb-black;
+$navbar-nav-item-font-weight: 700;
+$navbar-nav-item-color: $sovbb-grey;
 $navbar-nav-item-hover-color: $sovbb-red;
 $navbar-nav-item-active-color: $sovbb-red;
 $navbar-nav-item-padding-horizontal: 1rem;
@@ -58,7 +62,7 @@ $navbar-dropdown-nav-item-color: $sovbb-black;
 $navbar-dropdown-nav-item-active-color: $sovbb-red;
 $navbar-dropdown-nav-item-hover-color: $sovbb-red;
 
-$breadcrumb-item-font-size: 0.8rem;
+$breadcrumb-item-font-size: 1rem;
 $breadcrumb-item-color: $sovbb-black;
 $breadcrumb-item-hover-color: $sovbb-red;
 $breadcrumb-item-active-color: $sovbb-red;
@@ -80,19 +84,25 @@ $breadcrumb-divider-color: $sovbb-black;
 // 4. Import UIkit.
 @import "../uikit/src/scss/uikit.scss";
 
+.uk-navbar-nav > li > a,    // Nav item
+.uk-navbar-item,            // Content item
+.uk-navbar-toggle {         // Clickable item
+    font-weight: $navbar-nav-item-font-weight;
+}
+
 .sovbb-navbar {
   padding-top: 30px;
   padding-bottom: 30px;
   @media (min-width: $breakpoint-medium) {
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   .uk-logo {
     @media (min-width: $breakpoint-medium) {
-      margin-left: -140px;
+      margin-left: -80px;
     }
     img {
-      height: 60px;
+      height: 65px;
     }
   }
 }
@@ -177,50 +187,49 @@ $breadcrumb-divider-color: $sovbb-black;
 
   a {
     color: $sovbb-white;
+    &:hover {
+      color: $sovbb-grey;
+    }
+    text-decoration: underline;
   }
 
   .sovbb-footer-flex {
     .sovbb-button-member-positioner {
-        @media screen and (min-width: $breakpoint-small) {
-            position: relative;
-        }
+      @media screen and (min-width: $breakpoint-large) {
+        position: relative;
+      }
 
       .sovbb-button-member {
         div {
-          color: $sovbb-black;
+          color: $sovbb-grey;
         }
         &:hover div {
-            color: $sovbb-red;
-          }
-        
+          color: $sovbb-red;
+        }
 
         top: -5ex;
         right: 2ex;
-        @media screen and (min-width: $breakpoint-small) {
-            top: -9ex;
-            right: -8ex;
+        @media screen and (min-width: $breakpoint-large) {
+          top: -9ex;
+          right: -8ex;
         }
-        @media screen and (min-width: $breakpoint-medium) {
-            top: -8ex;
-            right: -14ex;
+        @media screen and (min-width: $breakpoint-large) {
+          top: -8ex;
+          right: -14ex;
         }
       }
     }
     flex-direction: column;
     @media screen and (min-width: $breakpoint-small) {
-        flex-direction: row;
-        margin-right: 10em;
-      
-        }
-    @media screen and (min-width: $breakpoint-large) {
-      
+      flex-direction: row;
+      margin-right: 10em;
     }
   }
 }
 
 .sovbb-navbar .uk-navbar-nav {
   .uk-parent {
-    padding-top: 3.4ex;
+    padding-top: 4.6ex;
   }
 }
 
@@ -241,7 +250,7 @@ $breadcrumb-divider-color: $sovbb-black;
   transform: rotate(-15deg);
   width: 10ex;
   height: 10ex;
-  @media (min-width: $breakpoint-medium) {
+  @media (min-width: $breakpoint-large) {
     right: -4ex;
     font-size: 2rem;
   }
@@ -331,15 +340,12 @@ $breadcrumb-divider-color: $sovbb-black;
   background-color: $sovbb-red;
   margin-bottom: 5ex;
   > div {
-    padding-top: 30px;
+    padding-top: 45px;
     position: relative;
     height: 250px;
-    padding-bottom: 80px;
+    padding-bottom: 45px;
     margin-bottom: 5ex;
     img {
-      @media (min-width: $breakpoint-medium) {
-        margin-left: -60px;
-      }
       height: 100%;
     }
     @media (min-width: $breakpoint-medium) {
@@ -490,7 +496,7 @@ $breadcrumb-divider-color: $sovbb-black;
     }
 
     a {
-      color: $sovbb-black;
+      color: $sovbb-grey;
       text-decoration: underline;
     }
   }
