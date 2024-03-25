@@ -87,12 +87,13 @@ $breadcrumb-item-decoration: none;
 
 .uk-navbar-nav > li > a,    // Nav item
 .uk-navbar-item,            // Content item
-.uk-navbar-toggle {         // Clickable item
-    font-weight: $navbar-nav-item-font-weight;
+.uk-navbar-toggle {
+  // Clickable item
+  font-weight: $navbar-nav-item-font-weight;
 }
 
 .uk-breadcrumb > li > a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .sovbb-navbar {
   padding-top: 30px;
@@ -184,7 +185,7 @@ $breadcrumb-item-decoration: none;
   margin-top: 8ex;
   font-size: 0.8rem;
   @media screen and (min-width: $breakpoint-small) {
-    font-size: 1rem;    
+    font-size: 1rem;
   }
   background-color: $sovbb-red;
   color: $sovbb-white;
@@ -325,7 +326,6 @@ $breadcrumb-item-decoration: none;
           margin: 0.4ex;
         }
         // a with href is more than 1 charecter long
-        
 
         a[href]:not([href="#"]):hover,
         &.uk-active > a {
@@ -418,13 +418,23 @@ $breadcrumb-item-decoration: none;
 }
 
 .sovbb-content {
-  > :first-child {
+  margin-bottom: 4ex;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  > p:first-child {
     font-size: 1.2rem;
     @media screen and (min-width: $breakpoint-medium) {
       font-size: 1.5625rem;
     }
   }
-  margin-bottom: 4ex;
+  p {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  li {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
 }
 
 .sovbb-person {

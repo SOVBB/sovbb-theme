@@ -8,17 +8,20 @@
         {{ $resources := .Resources.Match "*.md" }}
         {{ if $resources }}
         <div class="sovbb-agenda">
-            {{ range $resources }}
-            <div class="sovbb-line"></div>
+        {{ range $resources }}
+        <div class="sovbb-line"></div>
             <div class="sovbb-date">
-                {{ time.Format "02.01.2006" .Date }}
+                {{ time.Format "02.01.2006" .Params.EventDate }}
             </div>
             <div class="sovbb-desc">
                 <h2>{{ .Title }}</h2>
                 <div>{{ .Content }}</div>
             </div>
+            <!-- check if both .Href  and .LinkText are set -->
             <div class="sovbb-link">
+                {{ if and .Params.Href .Params.LinkText }}
                 <a href="{{ .Params.Href }}">{{ .Params.LinkText }}</a>
+                {{ end }}
             </div>
             {{ end }}
             <div class="sovbb-line"></div>
