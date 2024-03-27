@@ -112,19 +112,11 @@ $breadcrumb-item-decoration: none;
   }
 }
 
-.sovbb-intro {
-  margin-top: 2ex;
-  @media (min-width: $breakpoint-medium) {
-    font-size: 2rem;
-  }
-  font-size: 1.6rem;
-  font-weight: normal;
-  margin-bottom: 2ex;
-}
-
 .sovbb-reasons {
   hyphens: auto;
   -webkit-hyphens: auto;
+  margin-top: 4ex;
+  margin-bottom: 4ex;
   em {
     font-style: normal;
     color: $sovbb-red;
@@ -133,7 +125,10 @@ $breadcrumb-item-decoration: none;
     break-inside: avoid;
     text-indent: -1.2em;
     padding-left: 1.2em;
-    margin-bottom: 1ex;
+    margin-bottom: 2ex;
+  }
+  > div:first-child {
+    margin-bottom: 2ex;
   }
 }
 
@@ -184,9 +179,6 @@ $breadcrumb-item-decoration: none;
 .sovbb-footer {
   margin-top: 8ex;
   font-size: 0.8rem;
-  @media screen and (min-width: $breakpoint-small) {
-    font-size: 1rem;
-  }
   background-color: $sovbb-red;
   color: $sovbb-white;
   padding-top: 4ex;
