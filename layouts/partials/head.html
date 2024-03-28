@@ -8,10 +8,10 @@
         {{ end }}
     </title>
     {{ $sass := resources.Get "scss/site.scss" }}
-    {{ $style := $sass | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS }}
+    {{ $style := $sass | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS | minify | fingerprint }}
     {{ $secureStyle := $style | resources.Fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integriety="{{ $secureStyle.Data.Integrity }}">
-    {{ $js := resources.Get "uikit/dist/js/uikit.js" }}
+    {{ $js := resources.Get "uikit/dist/js/uikit.min.js" }}
     {{ $secureJS := $js | resources.Fingerprint "sha512" }}
     <script src="{{ $js.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
     {{ $favicon := $.Site.Params.favicon }}
