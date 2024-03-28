@@ -16,8 +16,7 @@
     <script src="{{ $js.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
     {{ $favicon := $.Site.Params.favicon }}
     {{ if $favicon }}
-    <link rel="icon" href='{{ (resources.Get (print "img/" $favicon ".png")).RelPermalink }}' sizes="any" />
-    <link rel="icon" href='{{ (resources.Get (print "img/" $favicon ".svg")).RelPermalink }}' type="image/svg+xml" />
+    <link rel="icon" href='{{ (resources.Get (print "img/" $favicon ".png")).RelPermalink }}' sizes="any">
+    <link rel="icon" href='{{ (resources.Get (print "img/" $favicon ".svg")).RelPermalink }}' type="image/svg+xml">
     {{ end }}
-
 </head>

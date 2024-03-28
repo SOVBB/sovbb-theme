@@ -9,10 +9,10 @@
     {{ end }}
         <li class='uk-parent {{ $active.Get "class" }} uk-visible@m'>
             {{ if .Params.href }}
-            <a class='uk-text-nowrap' target="_new" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
+            <a class="uk-text-nowrap" target="_blank" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
             {{ else }}
             {{ if ( and .Pages (not .Resources )) }}
-            <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
+            <a class="uk-text-nowrap" href="#">{{ .Title | safeHTML }}</a>
             <div class="uk-navbar-dropdown"
                 uk-dropdown="animation: slide-top; animate-out: true; offset: 8ex;">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -28,7 +28,7 @@
                 </ul>
             </div>
             {{ else }}
-            <a class='uk-text-nowrap' href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
+            <a class="uk-text-nowrap" href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
             {{ end }}
             {{ end }}
         </li>

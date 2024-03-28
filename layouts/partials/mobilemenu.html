@@ -21,8 +21,10 @@
 <div class="sovbb-mobile-menu" id="sovbb-offcanvas-nav" uk-offcanvas="overlay: true; flip: true;">
     <div class="uk-offcanvas-bar">
         <div class="uk-text-right">
-            <a href="#sovbb-offcanvas-nav" uk-toggle><img class="sovbb-x" src='{{
-                (resources.Get "img/sovbb_x.svg").RelPermalink }}'></a>
+            <a href="#sovbb-offcanvas-nav" uk-toggle>
+                <img class="sovbb-x" alt="Close"
+                    src="{{(resources.Get 'img/sovbb_x.svg').RelPermalink }}">
+            </a>
         </div>
         <ul class="" uk-nav="active: 0;">
             {{ range .Site.Home.CurrentSection.Pages.ByWeight }}
@@ -36,12 +38,12 @@
 
             {{ if .Params.href }}
             <li class='{{ $active.Get "class" }}'>
-                <a class='uk-text-nowrap' target="_new" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
+                <a class="uk-text-nowrap" target="_blank" href="{{ .Params.href | safeURL }}">{{ .Title | safeHTML }}</a>
             </li>
             {{ else }}
             {{ if ( and .Pages (not .Resources )) }}
             <li class='uk-parent {{ $active.Get "class" }}'>
-                <a class='uk-text-nowrap' href="#">{{ .Title | safeHTML }}</a>
+                <a class="uk-text-nowrap" href="#">{{ .Title | safeHTML }}</a>
                 <ul class="uk-nav-sub">
                     {{ range .Pages.ByWeight }}
                     {{ $active := newScratch }}
@@ -56,8 +58,8 @@
                 </ul>
             </li>
             {{ else }}
-            <li class='{{ $active.Get "class" }}'>
-                <a class='uk-text-nowrap' href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
+            <li class="{{ $active.Get 'class' }}">
+                <a class="uk-text-nowrap" href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
             </li>
             {{ end }}
             {{ end }}

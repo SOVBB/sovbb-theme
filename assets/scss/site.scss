@@ -267,6 +267,9 @@ $breadcrumb-item-decoration: none;
 
 .sovbb-mobilemenu-button {
   padding-top: 2ex;
+  img {
+    width: 2rem;
+  }
 }
 
 .sovbb-hero-home {
@@ -452,4 +455,9 @@ $breadcrumb-item-decoration: none;
       }
     }
   }
+}
+
+.sovbb-nobreak-span {
+    hyphens: none;
+    white-space:nowrap;
 }
