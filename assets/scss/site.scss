@@ -112,7 +112,7 @@ $breadcrumb-item-decoration: none;
   }
 }
 
-.sovbb-reasons {
+.sovbb-list {
   hyphens: auto;
   -webkit-hyphens: auto;
   margin-top: 4ex;
@@ -121,7 +121,7 @@ $breadcrumb-item-decoration: none;
     font-style: normal;
     color: $sovbb-red;
   }
-  .sovbb-reason {
+  .sovbb-item {
     break-inside: avoid;
     text-indent: -1.2em;
     padding-left: 1.2em;
@@ -132,49 +132,6 @@ $breadcrumb-item-decoration: none;
   }
 }
 
-.sovbb-invite {
-  padding-top: 3ex;
-  padding-bottom: 8ex;
-  margin-top: 4ex;
-  background-color: $sovbb-red;
-  color: $sovbb-white;
-  @media (min-width: $breakpoint-medium) {
-    padding-bottom: 3ex;
-  }
-  h2 {
-    font-weight: normal;
-    font-size: 2rem;
-    color: $sovbb-white;
-    margin-bottom: 0.5ex;
-  }
-  p {
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    margin-bottom: 1ex;
-    margin-top: 1.5ex;
-    padding: 0;
-  }
-  dl {
-    margin-top: 1ex;
-    display: grid;
-    grid-template-columns: max-content auto;
-    grid-template-rows: max-content;
-    column-gap: 1em;
-    row-gap: 0.5ex;
-    dt {
-      grid-column: 1;
-      font-weight: normal;
-    }
-    dd {
-      grid-column: 2;
-    }
-  }
-}
-
-.sovbb-body {
-  hyphens: auto;
-  -webkit-hyphens: auto;
-}
 
 .sovbb-footer {
   margin-top: 8ex;
@@ -264,33 +221,6 @@ $breadcrumb-item-decoration: none;
   }
 }
 
-.sovbb-button-rsvp {
-  background-color: $sovbb-white;
-  color: $sovbb-black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  line-height: 100%;
-  font-weight: normal;
-  text-align: center;
-  transform: rotate(-15deg);
-  @media (min-width: $breakpoint-medium) {
-    right: 4ex;
-    bottom: 3ex;
-    font-size: 2rem;
-  }
-  font-size: 1.5rem;
-  right: 3ex;
-  bottom: -1ex;
-  padding: 0.5ex;
-  position: absolute;
-  &:hover {
-    text-decoration: none;
-    color: $sovbb-red;
-  }
-}
-
 // color settings are necessary because the offcanvas menu
 // seems to be invered and I can not find the reseaon for this.
 .sovbb-mobile-menu {
@@ -342,6 +272,7 @@ $breadcrumb-item-decoration: none;
 .sovbb-hero-home {
   background-color: $sovbb-red;
   margin-bottom: 5ex;
+  overflow: hidden;
   > div {
     padding-top: 45px;
     position: relative;
@@ -365,6 +296,7 @@ $breadcrumb-item-decoration: none;
   background-color: $sovbb-red;
   width: 100%;
   position: relative;
+  overflow: hidden;
   .sovbb-hero-image-positioner {
     overflow: visible;
     display: inline-block;

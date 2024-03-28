@@ -1,11 +1,11 @@
 {{ with index $.Page.Params (.Get 0) }}
-<div class="sovbb-reasons">
+<div class="sovbb-list">
     {{ if .Intro }}
     <div><em>{{ .Intro | markdownify }}</em> …</div>
     {{ end }}
     <div class="uk-column-1-2@s">
         {{ range .Items }}
-        <div class="sovbb-reason">
+        <div class="sovbb-item">
             … {{ . | markdownify }}
         </div>
         {{ end }}
