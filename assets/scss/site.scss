@@ -132,7 +132,6 @@ $breadcrumb-item-decoration: none;
   }
 }
 
-
 .sovbb-footer {
   margin-top: 8ex;
   font-size: 0.8rem;
@@ -240,6 +239,21 @@ $breadcrumb-item-decoration: none;
 
     .uk-nav {
       margin-top: 3ex;
+      .uk-parent::before {
+        background-image: url("../img/sovbb_arrow_down.svg");
+        content: " ";
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        top: 0.6ex;
+        right: 0.3em;
+      }
+      .uk-parent.uk-open::before {
+        background-image: url("../img/sovbb_arrow_up.svg");
+      }
       > li {
         position: relative;
         > a {
@@ -458,6 +472,6 @@ $breadcrumb-item-decoration: none;
 }
 
 .sovbb-nobreak-span {
-    hyphens: none;
-    white-space:nowrap;
+  hyphens: none;
+  white-space: nowrap;
 }
