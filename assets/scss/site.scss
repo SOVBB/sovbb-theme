@@ -240,7 +240,7 @@ $breadcrumb-item-decoration: none;
     .uk-nav {
       margin-top: 3ex;
       .uk-parent::before {
-        background-image: url("../img/sovbb_arrow_down.svg");
+        background-image: url("img/sovbb_arrow_down.svg");
         content: " ";
         background-position: center;
         background-size: contain;
@@ -252,7 +252,7 @@ $breadcrumb-item-decoration: none;
         right: 0.3em;
       }
       .uk-parent.uk-open::before {
-        background-image: url("../img/sovbb_arrow_up.svg");
+        background-image: url("img/sovbb_arrow_up.svg");
       }
       > li {
         position: relative;
