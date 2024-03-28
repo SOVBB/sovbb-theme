@@ -23,7 +23,7 @@
         <div class="uk-text-right">
             <a href="#sovbb-offcanvas-nav" uk-toggle>
                 <img class="sovbb-x" alt="Close"
-                    src="{{(resources.Get 'img/sovbb_x.svg').RelPermalink }}">
+                    src='{{(resources.Get "img/sovbb_x.svg").RelPermalink }}'>
             </a>
         </div>
         <ul class="" uk-nav="active: 0;">
@@ -58,7 +58,7 @@
                 </ul>
             </li>
             {{ else }}
-            <li class="{{ $active.Get 'class' }}">
+            <li class='{{ $active.Get "class" }}'>
                 <a class="uk-text-nowrap" href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
             </li>
             {{ end }}

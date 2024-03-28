@@ -1,7 +1,7 @@
 {{ if .IsHome }}
 <div class="sovbb-hero-home uk-container-expand sovbb-hero uk-position-relative">
     <div class="uk-container uk-container-small uk-container-large@l">
-        <img src="{{ (resources.Get 'img/sovbb_hero.svg').RelPermalink }}" alt="{{ $.Site.Title }}">
+        <img src='{{ (resources.Get "img/sovbb_hero.svg").RelPermalink }}' alt="{{ $.Site.Title }}">
         <a href="{{ .Params.Links.membership.link}}" class="sovbb-button-member">
             <div>{{ .Params.Links.membership.text }}</div>
         </a>
