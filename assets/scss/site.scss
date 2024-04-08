@@ -140,7 +140,9 @@ $breadcrumb-item-decoration: none;
   padding-top: 4ex;
   padding-bottom: 4ex;
   position: relative;
-
+  .sovbb-address-box {
+    width: max-content;
+  }
   a {
     color: $sovbb-white;
     &:hover {
